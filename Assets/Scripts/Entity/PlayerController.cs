@@ -9,4 +9,9 @@ public class PlayerController : BaseController
     {
         moveDirection = inputValue.Get<Vector2>().normalized;       
     }
+
+    void OnInterAction(InputValue inputValue)
+    {
+
+    }
 }
