@@ -8,6 +8,6 @@ public class PlayerController : BaseController
 
     void OnMove(InputValue inputValue)
     {
-        moveDirection = inputValue.Get<Vector2>().normalized;       
+        moveDirection = inputValue.Get<Vector2>().normalized;
     }
 }
