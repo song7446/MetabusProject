@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour
 {
-    private static readonly int isMoveX = Animator.StringToHash("IsMoveX");
-    private static readonly int isMoveY = Animator.StringToHash("IsMoveY");
+    private static readonly int moveX = Animator.StringToHash("MoveX");
+    private static readonly int moveY = Animator.StringToHash("MoveY");
 
     protected Animator animator;
 
@@ -16,8 +16,8 @@ public class AnimationHandler : MonoBehaviour
 
     public void Move(Vector2 obj)
     {
-        animator.SetInteger(isMoveX, (int)obj.x);
-        animator.SetInteger(isMoveY, (int)obj.y);
+        animator.SetInteger(moveX, (int)obj.x);
+        animator.SetInteger(moveY, (int)obj.y);
     }
 
 }
