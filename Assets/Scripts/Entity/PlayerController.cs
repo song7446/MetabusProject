@@ -14,7 +14,7 @@ public class PlayerController : BaseController
 
     void OnInterAction(InputValue inputValue)
     {       
-        if (GameManager.Instance.potalController.onPotal)
+        if (SceneManager.GetActiveScene().name == "MainScene" && GameManager.Instance.potalController.onPotal)
         {
             SceneManager.LoadScene("MiniGameScene");
         }
