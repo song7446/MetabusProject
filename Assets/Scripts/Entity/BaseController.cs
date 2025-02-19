@@ -10,9 +10,12 @@ public class BaseController : MonoBehaviour
     protected Vector2 moveDirection = Vector2.zero;
     public Vector2 MoveDirection { get { return moveDirection; } }
 
+    protected AnimationHandler animationHandler;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
 
     private void FixedUpdate()
@@ -23,7 +26,7 @@ public class BaseController : MonoBehaviour
     public void Move(Vector2 direction)
     {
         direction = speed * direction;
-
         rigidbody.velocity = direction;
+        animationHandler.Move(direction);
     }
 }
