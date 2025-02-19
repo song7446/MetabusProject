@@ -16,8 +16,6 @@ public class AnimationHandler : MonoBehaviour
 
     public void Move(Vector2 obj)
     {
-        Debug.Log("x" + (int)obj.x);
-        Debug.Log("y" + (int)obj.y);
         animator.SetInteger(isMoveX, (int)obj.x);
         animator.SetInteger(isMoveY, (int)obj.y);
     }
