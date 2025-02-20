@@ -23,7 +23,7 @@ public class MiniGameManager : MonoBehaviour
     {
         time = 0f;
         uiManager.SetPlayGame();
-        sampleObstacle.SetActive(false);   
+        sampleObstacle.SetActive(false);
         StartCoroutine(CreateObstacles());
     }
 
@@ -31,7 +31,7 @@ public class MiniGameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetFloat("BestTime") < time)
         {
-            PlayerPrefs.SetFloat("BestTime", time);            
+            PlayerPrefs.SetFloat("BestTime", time);
         }
         uiManager.ChangeBestTime(PlayerPrefs.GetFloat("BestTime"));
         uiManager.SetStopGame(time);
@@ -45,6 +45,8 @@ public class MiniGameManager : MonoBehaviour
 
         uiManager = FindObjectOfType<UIManager>();
         obstacleManager = GetComponentInChildren<ObstacleManager>();
+        if (!PlayerPrefs.HasKey("BestTime"))
+            PlayerPrefs.SetFloat("BestTime", 0f);
     }
 
     private void Update()
