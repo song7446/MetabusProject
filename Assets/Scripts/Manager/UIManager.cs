@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour
     public void SetStopGame(float time)
     {
         isGameOn = false;
-        gameOverUI.ViewTime(time);  
+        gameOverUI.SetCurTime(time);  
         ChangeState(UIState.GameOverUI);
     }
 

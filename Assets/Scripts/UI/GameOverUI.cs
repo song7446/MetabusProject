@@ -35,7 +35,7 @@ public class GameOverUI : BaseUI
         SceneManager.LoadScene("MainScene");
     }
 
-    public void ViewTime(float time)
+    public void SetCurTime(float time)
     {
         curTimeTxt.text = time.ToString("N2");
     }

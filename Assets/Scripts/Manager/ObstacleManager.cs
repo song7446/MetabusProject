@@ -64,8 +64,17 @@ public class ObstacleManager : MonoBehaviour
                 endPoint = new Vector2(-20, randomY);
                 break;
         }
-
-        GameObject obstacle = Instantiate(obstacles[0]);
+        int randIdx = Random.Range(0, 7);
+        GameObject obstacle = Instantiate(obstacles[randIdx]);
         obstacle.transform.position = new Vector2(randomX, randomY);
-    }  
+        obstacle.transform.SetParent(transform);
+    }
+
+    public void DestroyObstacles()
+    {
+        foreach (Transform child in transform) 
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

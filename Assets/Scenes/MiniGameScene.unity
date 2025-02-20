@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameOn: 0
-  obstacleManager: {fileID: 0}
+  obstacleManager: {fileID: 1938958888}
   sampleObstacle: {fileID: 1354605397}
 --- !u!4 &961951664
 Transform:
@@ -2444,6 +2444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 2335662457899309179, guid: d83c887002ecb074e9580f6bb712a8da, type: 3}
+  - {fileID: 1838350347301462930, guid: 3b702da3e2e3f294192fe7db4f2df570, type: 3}
+  - {fileID: 9165299910451840365, guid: 09410356cf0ba3d439104d02fd20ac1d, type: 3}
+  - {fileID: 6342690599348961989, guid: e1f3d037bbcccb74088173de42419eee, type: 3}
+  - {fileID: 4658369732325079312, guid: e89a04f1e67217a41bc36e3d2bb8cf03, type: 3}
+  - {fileID: 686803157601993564, guid: d32c490d92ca65a448bb353b5071a867, type: 3}
+  - {fileID: 2018362858301527349, guid: 00a28f8afdb787a448f097f8bbaf6e30, type: 3}
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
 --- !u!1 &1991666887

@@ -35,6 +35,7 @@ public class MiniGameManager : MonoBehaviour
             uiManager.ChangeBestTime(time);
         }
         uiManager.SetStopGame(time);
+        obstacleManager.DestroyObstacles();
         StopAllCoroutines();
     }
 
