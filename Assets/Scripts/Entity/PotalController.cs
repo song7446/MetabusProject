@@ -10,21 +10,15 @@ public class PotalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (SceneManager.GetActiveScene().name == "MainScene")
-        {
-            onPotal = true;
-            effect.SetActive(onPotal);
-            UIManager.Instance.InterActionTextOnOff(onPotal);
-        }
+        onPotal = true;
+        effect.SetActive(onPotal);
+        UIManager.Instance.InterActionTextOnOff(onPotal);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (SceneManager.GetActiveScene().name == "MainScene")
-        {
-            onPotal = false;
-            effect.SetActive(onPotal);
-            UIManager.Instance.InterActionTextOnOff(onPotal);
-        }
+        onPotal = false;
+        effect.SetActive(onPotal);
+        UIManager.Instance.InterActionTextOnOff(onPotal);
     }
 }
