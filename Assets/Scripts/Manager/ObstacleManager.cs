@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ObstacleManager : MonoBehaviour
 {
@@ -22,36 +24,48 @@ public class ObstacleManager : MonoBehaviour
     private Vector2 spawnPointUP7 = new Vector2(17f, 11f);
     private Vector2 spawnPointUP8 = new Vector2(17f, -11f);
 
+    public Vector2 startPoint = new Vector2();
+    public Vector2 endPoint = new Vector2();
+
     public void CreateObstacle()
     {
         int idx = Random.Range(0, 4);
         float randomX = 0f;
         float randomY = 0f;
+
         switch (idx)
         {
             // 위
             case 0:
-                randomX = Random.Range(-20f, 18f);
-                randomY = 11f;
+                randomX = Random.Range(-19f, 17f);
+                randomY = 10f;
+                startPoint = new Vector2(randomX, randomY);
+                endPoint = new Vector2(randomX, -11);
                 break;
             // 아래 
             case 1:
-                randomX = Random.Range(-20f, 18f);
-                randomY = -11f;
+                randomX = Random.Range(-19f, 17f);
+                randomY = -10f;
+                startPoint = new Vector2(randomX, randomY);
+                endPoint = new Vector2(randomX, 11);
                 break;
             // 왼쪽
             case 2:
-                randomX = -20f;
-                randomY = Random.Range(-11f, 11f);
+                randomX = -19f;
+                randomY = Random.Range(-10f, 11f);
+                startPoint = new Vector2(randomX, randomY);
+                endPoint = new Vector2(17, randomY);
                 break;
             // 오른쪽 
             case 3:
-                randomX = 17f;
-                randomY = Random.Range(-11f, 11f);
+                randomX = 16f;
+                randomY = Random.Range(-10f, 10f);
+                startPoint = new Vector2(randomX, randomY);
+                endPoint = new Vector2(-20, randomY);
                 break;
         }
 
         GameObject obstacle = Instantiate(obstacles[0]);
         obstacle.transform.position = new Vector2(randomX, randomY);
-    }
+    }  
 }

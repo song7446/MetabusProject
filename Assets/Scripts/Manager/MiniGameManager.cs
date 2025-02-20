@@ -12,23 +12,30 @@ public class MiniGameManager : MonoBehaviour
     public bool isGameOn = false;
 
     private UIManager uiManager;
-    private ObstacleManager obstacleManager;
+    public ObstacleManager obstacleManager;
 
     private float time = 0f;
 
     [SerializeField] private GameObject sampleObstacle;
 
+
     public void StartGame()
     {
         time = 0f;
         uiManager.SetPlayGame();
-        sampleObstacle.SetActive(false);
-        obstacleManager.CreateObstacle();
+        sampleObstacle.SetActive(false);   
+        StartCoroutine(CreateObstacles());
     }
 
     public void StopGame()
     {
-        uiManager.SetStopGame();
+        if (PlayerPrefs.GetFloat("BestTime") < time)
+        {
+            PlayerPrefs.SetFloat("BestTime", time);
+            uiManager.ChangeBestTime(time);
+        }
+        uiManager.SetStopGame(time);
+        StopAllCoroutines();
     }
 
     private void Awake()
@@ -37,6 +44,7 @@ public class MiniGameManager : MonoBehaviour
 
         uiManager = FindObjectOfType<UIManager>();
         obstacleManager = GetComponentInChildren<ObstacleManager>();
+        PlayerPrefs.SetFloat("BestTime", time);
     }
 
     private void Update()
@@ -46,6 +54,14 @@ public class MiniGameManager : MonoBehaviour
             time += Time.deltaTime;
             uiManager.ChangeTime(time);
         }
+    }
 
+    IEnumerator CreateObstacles()
+    {
+        while (true)
+        {
+            obstacleManager.CreateObstacle();
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

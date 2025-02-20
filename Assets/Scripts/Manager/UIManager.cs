@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
     private UIState currneState;
 
     public bool isGameOn = false;
-    private bool beforeGameOn = false;
 
     private void Awake()
     {
@@ -67,14 +66,20 @@ public class UIManager : MonoBehaviour
         isGameOn = true;
     }
 
-    public void SetStopGame()
+    public void SetStopGame(float time)
     {
         isGameOn = false;
+        gameOverUI.ViewTime(time);  
         ChangeState(UIState.GameOverUI);
     }
 
     public void ChangeTime(float time)
     {       
         gameUI.UpdateTime(time);
+    }
+
+    public void ChangeBestTime(float time)
+    {
+        gameOverUI.SetBestTime(time);
     }
 }

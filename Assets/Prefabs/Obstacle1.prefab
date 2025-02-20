@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 921326995701632582}
   - component: {fileID: 235620424158517652}
   - component: {fileID: 5077807439993072704}
-  - component: {fileID: 3552682305683554623}
   - component: {fileID: 1723843217816867220}
+  - component: {fileID: -2520817597747128387}
   m_Layer: 0
   m_Name: Obstacle1
   m_TagString: Untagged
@@ -140,27 +140,6 @@ PolygonCollider2D:
       - {x: 0.890625, y: 1.125}
       - {x: 0.421875, y: 1.3125}
   m_UseDelaunayMesh: 0
---- !u!95 &3552682305683554623
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2335662457899309179}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 27367f0bd6304394e8d0105194f512e1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1723843217816867220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +152,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af0d12dda4a2354aa62923cb62c0d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &-2520817597747128387
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335662457899309179}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

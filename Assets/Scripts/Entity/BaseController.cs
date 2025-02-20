@@ -18,12 +18,12 @@ public class BaseController : MonoBehaviour
         animationHandler = GetComponent<AnimationHandler>();
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         Move(moveDirection);
     }
 
-    public void Move(Vector2 direction)
+    public virtual void Move(Vector2 direction)
     {
         direction = speed * direction;
         rigidbody.velocity = direction;
