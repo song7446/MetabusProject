@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public PotalController potalController;
 
-
     private void Awake()
     {
         Instance = this;

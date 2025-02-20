@@ -6,34 +6,29 @@ using UnityEngine.EventSystems;
 
 public class ObstacleManager : MonoBehaviour
 {
+    // 장애물 프리팹
     [SerializeField] private GameObject[] obstacles;
 
-    // 위
-    private Vector2 spawnPointUP1 = new Vector2(-20f, 11f);
-    private Vector2 spawnPointUP2 = new Vector2(17f, 11f);
-
-    // 아래 
-    private Vector2 spawnPointUP3 = new Vector2(-20f, -11f);
-    private Vector2 spawnPointUP4 = new Vector2(17f, -11f);
-
-    // 왼쪽
-    private Vector2 spawnPointUP5 = new Vector2(-20f, 11f);
-    private Vector2 spawnPointUP6 = new Vector2(-20f, -11f);
-
-    // 오른쪽
-    private Vector2 spawnPointUP7 = new Vector2(17f, 11f);
-    private Vector2 spawnPointUP8 = new Vector2(17f, -11f);
-
+    // 시작 지점
     public Vector2 startPoint = new Vector2();
+
+    // 마지막 지점
     public Vector2 endPoint = new Vector2();
 
+    // 장애물 생성 함수
     public void CreateObstacle()
     {
-        int idx = Random.Range(0, 4);
+        // 위 아래 왼쪽 오른쪽 랜덤 
+        int randPoint = Random.Range(0, 4);
+
+        // 랜덤 x 좌표
         float randomX = 0f;
+
+        // 랜덤 y 좌표
         float randomY = 0f;
 
-        switch (idx)
+        // 위치에 따라 랜덤 좌표 지정
+        switch (randPoint)
         {
             // 위
             case 0:
@@ -64,12 +59,21 @@ public class ObstacleManager : MonoBehaviour
                 endPoint = new Vector2(-20, randomY);
                 break;
         }
+
+        // 장애물 개수 중 하나 랜덤
         int randIdx = Random.Range(0, 7);
+
+        // 랜덤 장애물 생성
         GameObject obstacle = Instantiate(obstacles[randIdx]);
+
+        // 장애물 시작 위치 지정 
         obstacle.transform.position = new Vector2(randomX, randomY);
+
+        // 장애물 부모 오브젝트 지정 
         obstacle.transform.SetParent(transform);
     }
 
+    // 모든 장애물 삭제 함수
     public void DestroyObstacles()
     {
         foreach (Transform child in transform) 
